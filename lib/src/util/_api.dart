@@ -26,6 +26,8 @@ class ApiHelper {
     String query, {
     String? type,
     String? regionCode,
+    String? publishedBefore,
+    String? publishedAfter,
     required String videoDuration,
     required String order,
   }) {
@@ -40,6 +42,8 @@ class ApiHelper {
       "type": "${this.type}",
       "order": order,
       "videoDuration": videoDuration,
+      "publishedBefore": publishedBefore,
+      "publishedAfter": publishedAfter
     };
     if (regionCode != null) options['regionCode'] = regionCode;
     print(options);
