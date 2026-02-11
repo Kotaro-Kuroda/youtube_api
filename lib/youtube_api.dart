@@ -50,8 +50,16 @@ class YoutubeApi {
       order: Order.relevance,
       videoDuration: VideoDuration.any,
     ),
+    String? channelId,
+    DateTime? publishedAfter,
+    DateTime? publishedBefore,
   }) async {
-    searchOptions = options.copyWith(query: query);
+    searchOptions = options.copyWith(
+      query: query,
+      channelId: channelId,
+      publishedAfter: publishedAfter,
+      publishedBefore: publishedBefore,
+    );
     final url = _getSearchUri(options: searchOptions);
     var res = await http.get(url, headers: headers);
     var jsonData = json.decode(res.body);

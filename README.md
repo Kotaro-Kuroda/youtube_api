@@ -31,6 +31,17 @@ result = await youtube.search(query);
 // data which are available in result is typed as in the example shown below
 ```
 
+Filter by channel and publish time:
+
+```dart
+result = await youtube.search(
+  query,
+  channelId: 'UCxxxxxxxxxxxxxxxxxxxx',
+  publishedAfter: DateTime.utc(2024, 1, 1),
+  publishedBefore: DateTime.utc(2024, 1, 31, 23, 59, 59),
+);
+```
+
 By default the search options are like the following:
 
 ```dart
